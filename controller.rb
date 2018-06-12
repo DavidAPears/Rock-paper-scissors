@@ -4,8 +4,8 @@ require('sinatra/contrib/all')
 require_relative('./models/game.rb')
 also_reload( './models/*' )
 
-get '/draw/:obj1/:obj2' do
-  game = Game.new( params[:obj1], params[:obj2] )
-  @outcome = game.draw()
+get '/rps_game/:player1/:player2' do
+  game = Game.new( params[:player1], params[:player2] )
+  @outcome = game.rps_game()
   erb( :outcome )
 end

@@ -1,40 +1,20 @@
 class Game
 
-  def initialize(obj1, obj2)
-    @object1= obj1
-    @object2 = obj2
+  def initialize(player1, player2)
+    @player1 = player1
+    @player2 = player2
   end
 
-  # def rock_win
-  #   if
-  #
-  # end
-  #
-  # def rock_lose
-  #
-  # end
-  #
-  # def paper_win
-  #
-  # end
-  #
-  # def paper_lose
-  #
-  # end
-  #
-  # def scissors_win
-  #
-  # end
-  #
-  # def scissors_lose
-  #
-  # end
-
-  def draw
-    if @object1 = @object2
-    return "Draw"
+  def rps_game
+    if (@player1 == "rock" && @player2 == "scissors") || (@player2 == "rock" && @player1 == "scissors")
+      return "Rock wins!"
+    elsif (@player1 == "rock" && @player2 == "paper") || (@player2 == "paper" && @player1 == "rock")
+      return "Paper wins!"
+    elsif (@player1 == "scissors" && @player2 == "paper") || (@player2 == "paper" && @player1 == "scissors")
+      return "Scissors wins!"
+    elsif (@player1 == @player2 && @player2 == @player1) || (@player2 == @player1 && @player1 == @player2)
+      return "Draw!"
+    end
   end
-  end
-
 
 end
